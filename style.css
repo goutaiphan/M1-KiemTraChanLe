@@ -44,8 +44,8 @@ button:active {
 #result {
     width: 400px;
     height: 100px;
-    line-height: 100px;
     margin: auto;
+    line-height: 100px;
     font-family: "Times New Roman", serif;
     font-size: 27px;
     border: 1px solid darkgray;
