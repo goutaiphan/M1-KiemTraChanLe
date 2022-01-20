@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng kiểm tra số chẵn</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="title">Ứng dụng<br>kiểm tra chẵn lẻ</div>
+<input type="text" id="input">
+<button onclick="action()">Kiểm tra</button>
+<div id="result"></div>
+</body>
+
+<script>
+    function action() {
+        let input = document.getElementById("input");
+        let surplus = input.value%2;
+        let result = document.getElementById("result");
+        let regex = /^[-+]?[0-9]+$/;
+
+        if (!input.value.match(regex)) {
+            input.setCustomValidity("Vui lòng nhập số nguyên.");
+            input.reportValidity();
+        } else {
+            if (surplus === 0) {
+                result.innerText = "Đây là số chẵn."
+            } else {
+                result.innerText = "Đây là số lẻ."
+            }
+        }
+    }
+</script>
+</html>
