@@ -8,16 +8,16 @@
 
 <body>
 <div id="title">Ứng dụng<br>kiểm tra chẵn lẻ</div>
-<input type="text" id="input">
-<button onclick="action()">Kiểm tra</button>
+<input id="input">
+<button id="button" onclick="test()">Kiểm tra</button>
 <div id="result"></div>
 </body>
 
 <script>
-    function action() {
+    function test() {
         let input = document.getElementById("input");
-        let surplus = input.value%2;
         let result = document.getElementById("result");
+        let surplus = input.value % 2;
         let regex = /^[-+]?[0-9]+$/;
 
         if (!input.value.match(regex)) {
