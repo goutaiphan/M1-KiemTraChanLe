@@ -7,28 +7,62 @@
 </head>
 
 <body>
-<div id="title">Ứng dụng<br>kiểm tra chẵn lẻ</div>
-<input id="input">
-<button id="button" onclick="test()">Kiểm tra</button>
-<div id="result"></div>
+<div id="titleArea">Ứng dụng<br>kiểm tra chẵn lẻ</div>
+
+<div id="group">
+    <input id="inputArea">
+    <button id="button">Kiểm tra</button>
+</div>
+
+<div id="resultArea"></div>
 </body>
 </html>
 
 <script>
-    function test() {
-        let input = document.getElementById("input");
-        let result = document.getElementById("result");
-        let regex = /^[-+]?[0-9]+$/;
+    let inputArea = document.getElementById('inputArea');
+    let resultArea = document.getElementById('resultArea');
+    let button = document.getElementById('button');
 
-        if (!input.value.match(regex)) {
-            input.setCustomValidity("Vui lòng nhập số nguyên.");
-            input.reportValidity();
+    inputArea.oninput = function () {
+        inputArea.value = inputArea.value.replace(/[^+\-(0-9)]/g, '');
+        resultArea.innerText = '';
+    }
+
+    button.onclick = test;
+    window.onkeydown = function (event) {
+        if (event.key === 'Enter') {
+            test();
+        }
+    }
+
+    function test() {
+        let formatValue = format(inputArea.value);
+        inputArea.value = formatValue;
+        if (formatValue % 2 === 0) {
+            resultArea.innerText = 'Đây là số chẵn.'
         } else {
-            if (input.value % 2 === 0) {
-                result.innerText = "Đây là số chẵn."
-            } else {
-                result.innerText = "Đây là số lẻ."
+            resultArea.innerText = 'Đây là số lẻ.'
+        }
+    }
+
+    function format(inputValue) {
+        let reMinus = inputValue.match(/(-)\1+/g);
+        if (reMinus !== null) {
+            for (let i = 0; i < reMinus.length; i++) {
+                if (reMinus[i].length % 2 === 0) {
+                    inputValue = inputValue.replace(reMinus[i], '+');
+                } else {
+                    inputValue = inputValue.replace(reMinus[i], '-');
+                }
             }
         }
+
+        let rePlus = inputValue.match(/(\+)\1+/g);
+        if (rePlus !== null) {
+            for (let i = 0; i < rePlus.length; i++) {
+                inputValue = inputValue.replace(rePlus[i], '+');
+            }
+        }
+        return eval(inputValue);
     }
 </script>
