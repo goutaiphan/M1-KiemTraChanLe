@@ -12,19 +12,19 @@
 <button id="button" onclick="test()">Kiểm tra</button>
 <div id="result"></div>
 </body>
+</html>
 
 <script>
     function test() {
         let input = document.getElementById("input");
         let result = document.getElementById("result");
-        let surplus = input.value % 2;
         let regex = /^[-+]?[0-9]+$/;
 
         if (!input.value.match(regex)) {
             input.setCustomValidity("Vui lòng nhập số nguyên.");
             input.reportValidity();
         } else {
-            if (surplus === 0) {
+            if (input.value % 2 === 0) {
                 result.innerText = "Đây là số chẵn."
             } else {
                 result.innerText = "Đây là số lẻ."
@@ -32,4 +32,3 @@
         }
     }
 </script>
-</html>
