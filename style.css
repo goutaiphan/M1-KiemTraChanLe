@@ -17,7 +17,7 @@ body {
 
 #group {
     width: 380px;
-    height: 130px;
+    height: 125px;
     margin: auto auto 40px auto;
     border: 1px solid darkgray;
     border-radius: 3px;
@@ -33,7 +33,7 @@ hr {
 
 #inputArea {
     width: 90%;
-    height: 35%;
+    height: 40%;
     margin: auto;
     text-align: center;
     border: none;
@@ -44,8 +44,8 @@ hr {
 
 #resultArea {
     width: 90%;
-    height: 65%;
-    line-height: 80px;
+    height: 60%;
+    line-height: 73px;
     margin: auto;
     font-family: "Times New Roman", serif;
     font-size: 25px;
