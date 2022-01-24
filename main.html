@@ -9,7 +9,7 @@
 <body>
 <div id="titleArea">Ứng dụng<br>kiểm tra chẵn lẻ</div>
 
-<div id ='group'>
+<div id='group'>
     <input id="inputArea"><br>
     <hr>
     <div id="resultArea"></div>
@@ -60,16 +60,21 @@
     }
 
     function result() {
-        let formatValue = format(inputArea.value);
+        let formatValue = eval(format(inputArea.value));
         if (formatValue === '') {
             inputArea.setCustomValidity('Biểu thức không hợp lệ.');
             inputArea.reportValidity();
         } else {
             try {
-                inputArea.value = eval(formatValue);
-                resultArea.innerHTML = eval(formatValue) % 2 === 0
-                    ? 'Đây là số chẵn.'
-                    : 'Đây là số lẻ.';
+                inputArea.value = formatValue;
+                if (formatValue === 0) {
+                    resultArea.innerHTML = 'Đây là số 0.';
+                } else {
+                    let posine = formatValue > 0 ? 'dương' : 'âm';
+                    resultArea.innerHTML = formatValue % 2 === 0
+                        ? 'Đây là số ' + posine + ' chẵn.'
+                        : 'Đây là số ' + posine + ' lẻ.';
+                }
             } catch (e) {
                 inputArea.setCustomValidity('Biểu thức không hợp lệ.');
                 inputArea.reportValidity();
