@@ -16,43 +16,57 @@ body {
 }
 
 #group {
-    width: 400px;
+    width: 380px;
+    height: 130px;
+    margin: auto auto 40px auto;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+}
+
+hr {
+    width: 90%;
+    height: 1px;
     margin: auto;
+    border: none;
+    background: darkgray;
 }
 
 #inputArea {
-    width: 60%;
-    height: 27px;
+    width: 90%;
+    height: 35%;
+    margin: auto;
     text-align: center;
-    border: 1px solid darkgray;
-    border-radius: 3px;
+    border: none;
     outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+#resultArea {
+    width: 90%;
+    height: 65%;
+    line-height: 80px;
+    margin: auto;
+    font-family: "Times New Roman", serif;
+    font-size: 25px;
+    border: none;
+    background: transparent;
 }
 
 button {
-    width: 30%;
-    height: 31px;
-    margin: 0 0 27px 7px;
+    width: 120px;
+    height: 33px;
+    margin: auto;
     text-align: center;
     border: 1px solid darkgray;
     border-radius: 3px;
+    background: lightgray;
 }
 
 button:hover {
-    background: lightgray;
+    background: darkgray;
 }
 
 button:active {
     transform: translateY(2px);
-}
-
-#resultArea {
-    width: 375px;
-    height: 105px;
-    line-height: 105px;
-    margin: auto;
-    font-family: "Times New Roman", serif;
-    font-size: 25px;
-    border: 1px solid darkgray;
-    border-radius: 3px;
 }

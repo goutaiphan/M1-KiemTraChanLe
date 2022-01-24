@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ứng dụng kiểm tra số chẵn</title>
+    <title>Ứng dụng kiểm tra chẵn lẻ</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 <div id="titleArea">Ứng dụng<br>kiểm tra chẵn lẻ</div>
 
-<div id="group">
-    <input id="inputArea">
-    <button id="button">Kiểm tra</button>
+<div id ='group'>
+    <input id="inputArea"><br>
+    <hr>
+    <div id="resultArea"></div>
 </div>
 
-<div id="resultArea"></div>
+<button id="button">Kiểm tra</button>
 </body>
 </html>
 
@@ -23,25 +24,56 @@
     let resultArea = document.getElementById('resultArea');
     let button = document.getElementById('button');
 
-    inputArea.oninput = function () {
-        inputArea.value = inputArea.value.replace(/[^+\-(0-9)]/g, '');
-        resultArea.innerText = '';
-    }
-
-    button.onclick = test;
+    button.onclick = result;
     window.onkeydown = function (event) {
-        if (event.key === 'Enter') {
-            test();
+        event.preventDefault();
+        switch (event.key) {
+            case String(event.key.match(/[0-9+\-]/)):
+                input();
+                break;
+            case 'Backspace':
+                clear();
+                break;
+            case 'Delete':
+            case 'Clear':
+                allClear();
+                break;
+            case 'Enter':
+                result();
+                break;
         }
     }
 
-    function test() {
+    function input() {
+        inputArea.value += this.event.key;
+        resultArea.innerHTML = '';
+    }
+
+    function clear() {
+        inputArea.value = inputArea.value.substr(0, inputArea.value.length - 1);
+        resultArea.innerHTML = '';
+    }
+
+    function allClear() {
+        inputArea.value = '';
+        resultArea.innerHTML = '';
+    }
+
+    function result() {
         let formatValue = format(inputArea.value);
-        inputArea.value = formatValue;
-        if (formatValue % 2 === 0) {
-            resultArea.innerText = 'Đây là số chẵn.'
+        if (formatValue === '') {
+            inputArea.setCustomValidity('Biểu thức không hợp lệ.');
+            inputArea.reportValidity();
         } else {
-            resultArea.innerText = 'Đây là số lẻ.'
+            try {
+                inputArea.value = eval(formatValue);
+                resultArea.innerHTML = eval(formatValue) % 2 === 0
+                    ? 'Đây là số chẵn.'
+                    : 'Đây là số lẻ.';
+            } catch (e) {
+                inputArea.setCustomValidity('Biểu thức không hợp lệ.');
+                inputArea.reportValidity();
+            }
         }
     }
 
@@ -49,20 +81,13 @@
         let reMinus = inputValue.match(/(-)\1+/g);
         if (reMinus !== null) {
             for (let i = 0; i < reMinus.length; i++) {
-                if (reMinus[i].length % 2 === 0) {
-                    inputValue = inputValue.replace(reMinus[i], '+');
-                } else {
-                    inputValue = inputValue.replace(reMinus[i], '-');
-                }
+                inputValue = reMinus[i].length % 2 === 0
+                    ? inputValue.replace(reMinus[i], '+')
+                    : inputValue.replace(reMinus[i], '-');
             }
         }
 
-        let rePlus = inputValue.match(/(\+)\1+/g);
-        if (rePlus !== null) {
-            for (let i = 0; i < rePlus.length; i++) {
-                inputValue = inputValue.replace(rePlus[i], '+');
-            }
-        }
-        return eval(inputValue);
+        inputValue = inputValue.replace(/(\+)\1+/g, '+');
+        return inputValue;
     }
 </script>
