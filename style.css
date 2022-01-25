@@ -1,17 +1,27 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/asset/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('/asset/Times New Roman.ttf');
+}
+
 body {
     margin: 100px 50px 100px 50px;
     text-align: center;
-    background-image: url('Triangle Background.png');
+    background-image: url('/asset/Triangle Background.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
 }
 
 #titleArea {
     margin: 0 0 50px 0;
-    font-family: "Playfair Display", serif;
-    transform: scale(1.05, 1);
+    font-family: 'Playfair Display', serif;
     font-size: 33px;
+    transform: scale(1.05, 1);
     line-height: 140%;
 }
 
@@ -47,7 +57,7 @@ hr {
     height: 60%;
     line-height: 73px;
     margin: auto;
-    font-family: "Times New Roman", serif;
+    font-family: 'Times New Roman', serif;
     font-size: 25px;
     border: none;
     background: transparent;

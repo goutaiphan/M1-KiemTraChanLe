@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Ứng dụng kiểm tra chẵn lẻ</title>
     <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
 
 <body>
-<p id="titleArea">Ứng dụng<br>kiểm tra chẵn lẻ</div>
+<p id="titleArea">Ứng dụng<br>kiểm tra chẵn lẻ</p>
 
 <div id='group'>
     <input id="inputArea">
@@ -71,9 +72,8 @@
                     resultArea.innerHTML = 'Đây là số 0.';
                 } else {
                     let posine = formatValue > 0 ? 'dương' : 'âm';
-                    resultArea.innerHTML = formatValue % 2 === 0
-                        ? 'Đây là số ' + posine + ' chẵn.'
-                        : 'Đây là số ' + posine + ' lẻ.';
+                    let evenodd = formatValue % 2 === 0 ? ' chẵn.' : ' lẻ.';
+                    resultArea.innerHTML = 'Đây là số '.concat(posine, evenodd);
                 }
             } catch (e) {
                 inputArea.setCustomValidity('Biểu thức không hợp lệ.');
