@@ -9,8 +9,8 @@
 }
 
 body {
-    margin: 100px auto 100px auto;
-    width: 80vw;
+    margin: 100px 50px 100px 50px;
+    width: 80%;
     text-align: center;
     background-image: url('/asset/TriangleBackground.png');
     background-size: cover;
