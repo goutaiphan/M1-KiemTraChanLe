@@ -10,7 +10,6 @@
 
 body {
     margin: 100px 50px 100px 50px;
-    position:fixed;
     text-align: center;
     background-image: url('/asset/TriangleBackground.png');
     background-size: cover;
