@@ -26,7 +26,7 @@ body {
 }
 
 #group {
-    width: 380px;
+    width: 80vw;
     height: 125px;
     margin: auto auto 40px auto;
     border: 1px solid darkgray;
