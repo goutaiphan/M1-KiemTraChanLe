@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Ứng dụng Kiểm tra chẵn lẻ</title>
     <link href="style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
 
 <body>
@@ -62,7 +61,7 @@
 
     function result() {
         let formatValue = eval(format(inputArea.value));
-        if (formatValue === '') {
+        if (formatValue === '' || formatValue === undefined) {
             inputArea.setCustomValidity('Biểu thức không hợp lệ.');
             inputArea.reportValidity();
         } else {
