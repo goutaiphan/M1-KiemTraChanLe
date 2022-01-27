@@ -18,7 +18,7 @@ body {
 }
 
 #titleArea {
-    margin: 0 0 70px 0;
+    margin: 70px auto;
     font-family: 'Playfair Display', serif;
     font-size: 35px;
     transform: scale(1.05, 1);
@@ -27,7 +27,7 @@ body {
 #groupArea {
     width: 380px;
     height: 125px;
-    margin: auto auto 50px auto;
+    margin: 50px auto;
     border: 1px solid gray;
     border-radius: 3px;
 }
@@ -43,7 +43,6 @@ hr {
 #inputArea {
     width: 90%;
     height: 40%;
-    margin: auto;
     text-align: center;
     border: none;
     outline: none;
@@ -65,8 +64,6 @@ hr {
 button {
     width: 120px;
     height: 33px;
-    margin: auto;
-    text-align: center;
     border: 1px solid gray;
     border-radius: 3px;
     background: lightgray;
