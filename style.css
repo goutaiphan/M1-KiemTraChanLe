@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/asset/PlayfairDisplay-Regular.ttf');
+    src: url('asset/PlayfairDisplay.ttf');
 }
 
 @font-face {
     font-family: 'Times New Roman';
-    src: url('/asset/TimesNewRoman.ttf');
+    src: url('asset/TimesNewRoman.ttf');
 }
 
 body {
@@ -18,14 +18,13 @@ body {
 }
 
 #titleArea {
-    margin: 0 0 50px 0;
+    margin: 0 0 70px 0;
     font-family: 'Playfair Display', serif;
-    font-size: 33px;
+    font-size: 35px;
     transform: scale(1.05, 1);
-    line-height: 140%;
 }
 
-#group {
+#groupArea {
     width: 380px;
     height: 125px;
     margin: auto auto 40px auto;

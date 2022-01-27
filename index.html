@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ứng dụng Kiểm tra chẵn lẻ</title>
+    <title>Kiểm tra chẵn lẻ</title>
     <link href="style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.8">
 </head>
 
 <body>
-<p id="titleArea">Ứng dụng<br>Kiểm tra chẵn lẻ</p>
+<p id="titleArea">Kiểm tra chẵn lẻ</p>
 
-<div id="group">
+<div id="groupArea">
     <input id="inputArea">
     <hr>
     <p id="resultArea"></p>
@@ -30,7 +30,7 @@
         event.preventDefault();
         switch (event.key) {
             case String(event.key.match(/[0-9+\-]/)):
-                input();
+                input(event.key);
                 break;
             case 'Backspace':
                 clear();
@@ -45,8 +45,8 @@
         }
     }
 
-    function input() {
-        inputArea.value += this.event.key;
+    function input(key) {
+        inputArea.value += key;
         resultArea.innerHTML = '';
     }
 
@@ -61,19 +61,19 @@
     }
 
     function result() {
-        let formatValue = eval(format(inputArea.value));
-        if (formatValue === '' || formatValue === undefined) {
+        let formatValue = format(inputArea.value);
+        if (formatValue === '') {
             inputArea.setCustomValidity('Biểu thức không hợp lệ.');
             inputArea.reportValidity();
         } else {
             try {
-                inputArea.value = formatValue;
-                if (formatValue === 0) {
+                inputArea.value = eval(formatValue);
+                if (eval(formatValue) === 0) {
                     resultArea.innerHTML = 'Đây là số 0.';
                 } else {
                     let posine = formatValue > 0 ? 'dương' : 'âm';
                     let evenodd = formatValue % 2 === 0 ? ' chẵn.' : ' lẻ.';
-                    resultArea.innerHTML = 'Đây là số '.concat(posine, evenodd);
+                    resultArea.innerHTML = 'Đây là số ' + posine + evenodd;
                 }
             } catch (e) {
                 inputArea.setCustomValidity('Biểu thức không hợp lệ.');
