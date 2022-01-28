@@ -6,7 +6,6 @@
     <title>Kiểm tra chẵn lẻ</title>
     <link href="style.css" rel="stylesheet">
     <link href="baseStyle.css" rel="stylesheet">
-    <link href="#" rel="icon">
 </head>
 
 <body>
@@ -29,6 +28,7 @@
 
     button.onclick = result;
     window.onkeydown = function (event) {
+        inputArea.setCustomValidity('');
         event.preventDefault();
         switch (event.key) {
             case String(event.key.match(/[0-9+\-]/)):
@@ -64,23 +64,26 @@
 
     function result() {
         let formatValue = format(inputArea.value);
-        if (formatValue === '') {
-            inputArea.setCustomValidity('Biểu thức không hợp lệ.');
-            inputArea.reportValidity();
-        } else {
-            try {
-                inputArea.value = eval(formatValue);
-                if (eval(formatValue) === 0) {
-                    resultArea.innerHTML = 'Đây là số 0.';
-                } else {
-                    let posine = formatValue > 0 ? 'dương' : 'âm';
-                    let evenodd = formatValue % 2 === 0 ? ' chẵn.' : ' lẻ.';
+        inputArea.value = formatValue;
+
+        try {
+            let result = eval(formatValue);
+            if (typeof(result) === 'number') {
+                inputArea.value = result;
+                if (result === 0) {
+                    resultArea.innerHTML = 'Đây là số 0.'
+                } else if (result !== 0) {
+                    let posine = result > 0 ? 'dương' : 'âm';
+                    let evenodd = result % 2 === 0 ? ' chẵn.' : ' lẻ.';
                     resultArea.innerHTML = 'Đây là số ' + posine + evenodd;
                 }
-            } catch (e) {
+            } else {
                 inputArea.setCustomValidity('Biểu thức không hợp lệ.');
                 inputArea.reportValidity();
             }
+        } catch {
+            inputArea.setCustomValidity('Biểu thức không hợp lệ.');
+            inputArea.reportValidity();
         }
     }
 
@@ -93,8 +96,6 @@
                     : inputValue.replace(reMinus[i], '-');
             }
         }
-
-        inputValue = inputValue.replace(/(\+)\1+/g, '+');
-        return inputValue;
+        return inputValue.replace(/(\+)\1+/g, '+');
     }
 </script>
