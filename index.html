@@ -35,11 +35,13 @@
                 input(event.key);
                 break;
             case 'Backspace':
-                clear();
+                clearRight();
                 break;
             case 'Delete':
+                clearLeft();
+                break;
             case 'Clear':
-                allClear();
+                clearAll();
                 break;
             case 'Enter':
                 result();
@@ -52,12 +54,17 @@
         resultArea.innerHTML = '';
     }
 
-    function clear() {
-        inputArea.value = inputArea.value.substr(0, inputArea.value.length - 1);
+    function clearRight() {
+        inputArea.value = inputArea.value.substring(0, inputArea.value.length - 1);
         resultArea.innerHTML = '';
     }
 
-    function allClear() {
+    function clearLeft() {
+        inputArea.value = inputArea.value.substring(1);
+        resultArea.innerHTML = '';
+    }
+
+    function clearAll() {
         inputArea.value = '';
         resultArea.innerHTML = '';
     }
@@ -68,7 +75,7 @@
 
         try {
             let result = eval(formatValue);
-            if (typeof(result) === 'number') {
+            if (typeof (result) === 'number') {
                 inputArea.value = result;
                 if (result === 0) {
                     resultArea.innerHTML = 'Đây là số 0.'
