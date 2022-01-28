@@ -9,7 +9,7 @@
     width: 380px;
     height: 125px;
     margin: 70px auto 50px;
-    border: 1px solid gray;
+    border: 1px solid darkgray;
     border-radius: 3px;
 }
 
@@ -18,7 +18,7 @@ hr {
     height: 1px;
     margin: auto;
     border: none;
-    background: gray;
+    background: darkgray;
 }
 
 #inputArea {
@@ -45,7 +45,7 @@ hr {
 button {
     width: 120px;
     height: 33px;
-    border: 1px solid gray;
+    border: 1px solid darkgray;
     border-radius: 3px;
     background: lightgray;
 }
