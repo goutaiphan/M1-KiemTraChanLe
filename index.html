@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Kiểm tra chẵn lẻ</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="baseStyle.css" rel="stylesheet">
+
+    <link href="stylesheet/baseStyle.css" rel="stylesheet">
+    <link href="stylesheet/fontStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,88 +22,4 @@
 </body>
 </html>
 
-<script>
-    let inputArea = document.getElementById('inputArea');
-    let resultArea = document.getElementById('resultArea');
-    let button = document.getElementById('button');
-
-    button.onclick = result;
-    window.onkeydown = function (event) {
-        inputArea.setCustomValidity('');
-        event.preventDefault();
-        switch (event.key) {
-            case String(event.key.match(/[0-9+\-]/)):
-                input(event.key);
-                break;
-            case 'Backspace':
-                clearRight();
-                break;
-            case 'Delete':
-                clearLeft();
-                break;
-            case 'Clear':
-                clearAll();
-                break;
-            case 'Enter':
-                result();
-                break;
-        }
-    }
-
-    function input(key) {
-        inputArea.value += key;
-        resultArea.innerHTML = '';
-    }
-
-    function clearRight() {
-        inputArea.value = inputArea.value.substring(0, inputArea.value.length - 1);
-        resultArea.innerHTML = '';
-    }
-
-    function clearLeft() {
-        inputArea.value = inputArea.value.substring(1);
-        resultArea.innerHTML = '';
-    }
-
-    function clearAll() {
-        inputArea.value = '';
-        resultArea.innerHTML = '';
-    }
-
-    function result() {
-        let formatValue = format(inputArea.value);
-        inputArea.value = formatValue;
-
-        try {
-            let result = eval(formatValue);
-            if (typeof (result) === 'number') {
-                inputArea.value = result;
-                if (result === 0) {
-                    resultArea.innerHTML = 'Đây là số 0.'
-                } else if (result !== 0) {
-                    let posine = result > 0 ? 'dương' : 'âm';
-                    let evenodd = result % 2 === 0 ? ' chẵn.' : ' lẻ.';
-                    resultArea.innerHTML = 'Đây là số ' + posine + evenodd;
-                }
-            } else {
-                inputArea.setCustomValidity('Biểu thức không hợp lệ.');
-                inputArea.reportValidity();
-            }
-        } catch {
-            inputArea.setCustomValidity('Biểu thức không hợp lệ.');
-            inputArea.reportValidity();
-        }
-    }
-
-    function format(inputValue) {
-        let reMinus = inputValue.match(/(-)\1+/g);
-        if (reMinus !== null) {
-            for (let i = 0; i < reMinus.length; i++) {
-                inputValue = reMinus[i].length % 2 === 0
-                    ? inputValue.replace(reMinus[i], '+')
-                    : inputValue.replace(reMinus[i], '-');
-            }
-        }
-        return inputValue.replace(/(\+)\1+/g, '+');
-    }
-</script>
+<script src="javascript/baseScript.js" type="module"></script>

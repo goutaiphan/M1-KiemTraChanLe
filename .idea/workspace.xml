@@ -5,12 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa36d290-73df-4a05-97fa-d54e3a54153d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/baseStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/baseStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/font/Roboto.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javascript/baseScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javascript/functionScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stylesheet/fontStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/PlayfairDisplay.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/font/PlayfairDisplay.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/TimesNewRoman.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/font/TimesNewRoman.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/TriangleBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/TriangleBackground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheet/baseStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/asset" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/font" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -40,9 +58,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/font" />
+      <recent name="$PROJECT_DIR$/stylesheet" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/asset" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stylesheet" />
+      <recent name="$PROJECT_DIR$/font" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -67,6 +90,7 @@
       <workItem from="1643409265122" duration="1679000" />
       <workItem from="1643412194979" duration="15000" />
       <workItem from="1643564445181" duration="15000" />
+      <workItem from="1644167091570" duration="495000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,97 @@
+@media screen and (hover: none) and (pointer: coarse) {
+    body {
+        width: 95%;
+    }
+
+    #titleArea {
+        font-size: 33px;
+    }
+}
+
+@media screen and (hover: hover) and (pointer: fine),
+(hover: none) and (pointer: coarse) and (min-width: 500px) {
+    body {
+        width: 400px;
+    }
+
+    #titleArea {
+        font-size: 35px;
+    }
+}
+
+* {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 100px auto 150px;
+    text-align: center;
+    background-image: url('../media/TriangleBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#titleArea {
+    margin: auto;
+    font-family: 'PlayfairDisplay', serif;
+    transform: scale(1.05, 1);
+    white-space: nowrap;
+}
+
+#boardArea {
+    width: 380px;
+    height: 125px;
+    margin: 70px auto 50px;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+#inputArea {
+    width: 90%;
+    height: 40%;
+    text-align: center;
+    font-size: 16px;
+    background: transparent;
+}
+
+hr {
+    width: 90%;
+    height: 1px;
+    margin: auto;
+    background: gray;
+}
+
+#resultArea {
+    width: 90%;
+    height: 60%;
+    line-height: 73px;
+    margin: auto;
+    font-family: 'TimesNewRoman', serif;
+    font-size: 25px;
+    background: transparent;
+}
+
+button {
+    width: 120px;
+    height: 33px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: lightgray;
+}
+
+button:hover {
+    background: darkgray;
+}
+
+button:active {
+    transform: translate(0, 2px);
+}
