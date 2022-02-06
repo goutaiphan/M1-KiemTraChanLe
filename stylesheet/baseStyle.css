@@ -48,7 +48,7 @@ body {
 }
 
 #boardArea {
-    width: 100%;
+    width: 96%;
     height: 125px;
     margin: 70px auto 50px;
     border: 1px solid gray;
