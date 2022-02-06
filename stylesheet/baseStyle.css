@@ -41,16 +41,16 @@ body {
 }
 
 #titleArea {
-    margin: auto;
+    margin: auto auto 60px;
     font-family: 'PlayfairDisplay', serif;
     transform: scale(1.05, 1);
     white-space: nowrap;
 }
 
 #boardArea {
-    width: 96%;
+    width: 90%;
     height: 125px;
-    margin: 70px auto 50px;
+    margin: auto auto 40px;
     border: 1px solid gray;
     border-radius: 3px;
 }
