@@ -83,6 +83,7 @@ hr {
 button {
     width: 120px;
     height: 33px;
+    font-size: 14px;
     border: 1px solid gray;
     border-radius: 3px;
     background: lightgray;
